@@ -3556,7 +3556,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     }
 
     // If reward percent is 100 then send all to reward address - *technium - added fork height check
-    if(hasPayment && payeerewardpercent == 100 && !fTestNet && pindexBest+1 < nForkOne || hasPayment && payeerewardpercent == 100 && fTestNet && pindexBest+1 > nTestnetForkOne){
+    if(hasPayment && payeerewardpercent == 100 && !fTestNet && pindexBest+1 < nForkOne || hasPayment && payeerewardpercent == 100 && fTestNet && pindexBest+1 < nTestnetForkOne){
         payments = txNew.vout.size() + 1;
         txNew.vout.resize(payments);
 
@@ -3571,7 +3571,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     }
 
     // If reward percent more than 0 and lower than 100 then split reward - *technium- added fork height check
-    if(hasPayment && payeerewardpercent > 0 && payeerewardpercent < 100 && !fTestNet && pindexBest+1 < nForkOne || hasPayment && fTestNet && pindexBest+1 > nTestnetForkOne){
+    if(hasPayment && payeerewardpercent > 0 && payeerewardpercent < 100 && !fTestNet && pindexBest+1 < nForkOne || hasPayment && payeerewardpercent > 0 && payeerewardpercent < 100 && fTestNet && pindexBest+1 < nTestnetForkOne){
         payments = txNew.vout.size() + 2;
         txNew.vout.resize(payments);
 
