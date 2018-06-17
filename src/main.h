@@ -44,7 +44,7 @@ class CNode;
 class CReserveKey;
 class CWallet;
 
-static const int nNeoScryptFork = 40;
+static const int nNeoScryptFork = 215000;
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
 static const unsigned int MAX_BLOCK_SIZE = 3000000;
@@ -85,7 +85,7 @@ static const unsigned char REJECT_INVALID = 0x10;
 
 /** Forks **/
 /* Livenet hard forks */ 
-static const int nForkOne = 200000; 
+static const int nForkOne = 215000; 
  
 /* Testnet hard forks */ 
 static const int nTestnetForkOne = 40; 

@@ -112,15 +112,15 @@ int GetMinPeerProto() {
     return MIN_PEER_PROTO_VERSION_1;
 }
 
-int GetMinInstantXProto() { 
-    if (pindexBest == NULL) { 
-        return MIN_INSTANTX_PROTO_VERSION_1; 
-    } 
-    if(pindexBest->nHeight >= getForkHeightOne()-5) { 
-        return MIN_INSTANTX_PROTO_VERSION_2; 
-    } 
-    return MIN_INSTANTX_PROTO_VERSION_1; 
-} 
+int GetMinInstantXProto() {
+    if (pindexBest == NULL) {
+        return MIN_INSTANTX_PROTO_VERSION_1;
+    }
+    if(pindexBest->nHeight >= getForkHeightOne()-5) {
+        return MIN_INSTANTX_PROTO_VERSION_2;
+    }
+    return MIN_INSTANTX_PROTO_VERSION_1;
+}
 
 // Fork heights
 const int getForkHeightOne()
@@ -1541,7 +1541,9 @@ unsigned int GetNextTargetRequired(const CBlockIndex *pindexLast, bool fProofOfS
         {
             const CBlockIndex *pindex = GetLastBlockIndex(pindexShort->pprev, fProofOfStake);
             if (pindex == NULL)
+            {
                 break;
+            }
             pindexShort = pindex;
         }
         nActualTimespanShort = (int64)pindexPrev->nTime - (int64)pindexShort->nTime;
@@ -1552,7 +1554,9 @@ unsigned int GetNextTargetRequired(const CBlockIndex *pindexLast, bool fProofOfS
         {
             const CBlockIndex *pindex = GetLastBlockIndex(pindexLong->pprev, fProofOfStake);
             if (pindex == NULL)
+            {
                 break;
+            }
             pindexLong = pindex;
         }
         nActualTimespanLong = (int64)pindexPrev->nTime - (int64)pindexLong->nTime;
