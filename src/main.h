@@ -25,7 +25,7 @@ static const int64_t DARKSEND_COLLATERAL = (0.01*COIN);
 static const int64_t DARKSEND_POOL_MAX = (4999.99*COIN);
 
 static const int64_t STATIC_POS_REWARD = 1 * COIN; //Constant reward of 3.4 IC per block has been ignored
-static const int64_t TARGET_SPACING = 2 * 60; // 2 min per Block
+static const int64_t TARGET_SPACING = 4 * 60; // 4 min per Block
 //static const int64_t TARGET_SPACING2 = 53; // 53 sec per Block
 //static const int64_t STAKE_TIMESPAN_SWITCH_TIME = 1508858115;
 //static const int64_t STAKE_TIMESPAN_SWITCH_TIME1 = 1509555600; //1 Nov 2017 17:00:00 GMT
@@ -74,7 +74,7 @@ static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20
 
 static const uint BLOCK_LIMITER_TIME = 240;
 
-static const int64_t DRIFT = 120;
+static const int64_t DRIFT = 240;
 inline int64_t PastDrift(int64_t nTime) { return nTime - DRIFT; }
 inline int64_t FutureDrift(int64_t nTime) { return nTime + DRIFT; }
 
